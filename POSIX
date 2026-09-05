@@ -1,0 +1,26 @@
+Msh POSIX Compatibility Statement
+==================================
+
+Msh is implemented to be POSIX-compatible at the source level.
+
+Standards followed:
+- ISO C99 (ISO/IEC 9899:1999) for the C language.
+- POSIX.1-2008 (IEEE Std 1003.1, 2017 Edition) for system calls.
+
+System calls used (POSIX-mandated):
+  fork, execvp, waitpid, pipe, dup2, chdir, getcwd,
+  signal, kill, read, write, open, close, getpid, getppid,
+  isatty, tcsetpgrp, tcgetpgrp.
+
+Headers used (standard / POSIX-mandated only):
+  <stdio.h>, <stdlib.h>, <string.h>, <unistd.h>, <fcntl.h>,
+  <sys/wait.h>, <sys/stat.h>, <signal.h>, <errno.h>,
+  <stdarg.h>, <dirent.h>, <termios.h>, <wordexp.h>.
+
+No external libraries are required at compile or run time
+(no readline, ncurses, or libedit).
+
+Build:
+  make
+Run:
+  ./msh
